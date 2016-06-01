@@ -7,7 +7,7 @@ usercall = 'user='
 tagcall = 'tags='
 
 # adjust these variables for different searches
-# also be sure to adjust the page title in the markdown() function
+# also be sure to adjust the page title in the YAML header section
 user = 'kris.shaffer@hypothes.is'
 tags = 'IndieEdTech'
 searchstring = source + usercall + user + conn + tagcall + tags
