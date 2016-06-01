@@ -22,7 +22,7 @@ def markdown(annotation):
     # YAML header
     textout = '---\n'
     textout += 'layout: page\n'
-    textout += 'title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer."\n'
+    textout += 'title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer"\n'
     textout += 'modified: 2016-05-31 13:37:00 -0500\n' # need to make this automatic
     textout += 'image: \n' # this is for adding a featured image, if desired and supported by theme
     textout += '---\n\n'
