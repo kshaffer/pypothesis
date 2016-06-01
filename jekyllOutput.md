@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer."
+title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer"
 modified: 2016-05-31 13:37:00 -0500
 image: 
 ---
@@ -12,13 +12,6 @@ image:
  ([kris.shaffer](https://hypothes.is/stream?=user:kris.shaffer))
 
 <hr/>
-
----
-layout: page
-title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer."
-modified: 2016-05-31 13:37:00 -0500
-image: 
----
 
 [Open Source is losing, SaaS is leading, APIs will win… — Point Nine Land — Medium](https://medium.com/point-nine-news/open-source-is-losing-saas-is-leading-apis-will-win-663648d9c8d0)
 

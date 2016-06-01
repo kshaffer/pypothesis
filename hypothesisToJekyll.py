@@ -13,22 +13,23 @@ tags = 'IndieEdTech'
 searchstring = source + usercall + user + conn + tagcall + tags
 filename = 'jekyllOutput.md'
 
-def writeMarkdown(data, filename):
+# YAML header
+headerinfo = '---\n'
+headerinfo += 'layout: page\n'
+headerinfo += 'title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer"\n'
+headerinfo += 'modified: 2016-05-31 13:37:00 -0500\n' # need to make this automatic
+headerinfo += 'image: \n' # this is for adding a featured image, if desired and supported by theme
+headerinfo += '---\n\n'
+
+def writeMarkdown(header, data, filename):
     f = open(filename, 'w')
+    f.write(header)
     for line in data:
         f.write(str(line) + '\n')
 
 def markdown(annotation):
-    # YAML header
-    textout = '---\n'
-    textout += 'layout: page\n'
-    textout += 'title: "#IndieEdTech Annotations with hypothes.is from kris.shaffer"\n'
-    textout += 'modified: 2016-05-31 13:37:00 -0500\n' # need to make this automatic
-    textout += 'image: \n' # this is for adding a featured image, if desired and supported by theme
-    textout += '---\n\n'
-
     # title of post with link to original post
-    textout += '['
+    textout = '['
     textout += annotation['document']['title'][0].replace('\n', '').replace('\r', '')
     textout += ']('
     textout += annotation['uri']
@@ -66,4 +67,4 @@ i = 0
 for row in d['rows']:
     dataToWrite.append(markdown(d['rows'][i]))
     i += 1
-writeMarkdown(dataToWrite, filename)
+writeMarkdown(headerinfo, dataToWrite, filename)
