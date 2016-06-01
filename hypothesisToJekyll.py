@@ -11,6 +11,10 @@ tagcall = 'tags='
 user = 'kris.shaffer@hypothes.is'
 tags = 'IndieEdTech'
 searchstring = source + usercall + user + conn + tagcall + tags
+# alternate search string for fetching all annotations from a specific user:
+#     searchstring = source + usercall + user
+# alternate search string for fetching all annotations from any user, but limited to a specific tag (a class hashtag, for example):
+#     searchstring = source + tagcall + tags
 filename = 'jekyllOutput.md'
 
 # YAML header
@@ -21,6 +25,7 @@ headerinfo += 'modified: 2016-05-31 13:37:00 -0500\n' # need to make this automa
 headerinfo += 'image: \n' # this is for adding a featured image, if desired and supported by theme
 headerinfo += '---\n\n'
 
+# don't edit anything below this line unless you know what you're doing :)
 def writeMarkdown(header, data, filename):
     f = open(filename, 'w')
     f.write(header)
