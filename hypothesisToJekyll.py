@@ -50,7 +50,7 @@ def markdown(annotation):
 
     # annotation comment, with username and link to stream
     textout += annotation['text']
-    textout += ' (['
+    textout += ' (Curated by ['
     useracct = annotation['user'].split(':')[1].split('@')[0]
     textout += useracct
     textout += ']('
