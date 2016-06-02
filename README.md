@@ -14,4 +14,4 @@ Enjoy!
 
 ## pypothesis.py
 
-The beginnings of a Python module that will allow programmers a simpler interface for the hypothes.is API.
+The beginnings of a Python module that will allow programmers a simpler interface for the hypothes.is API. See test (at end of script) for sample code.
