@@ -11,3 +11,7 @@ Simply open the script, change the variables at the top of the file to suit your
 The downside to this script, which results from the way GitHub Pages works, is that you have to run it manually each time you want to fetch new annotations. To enhance that process, you could add the appropriate path to the output file name in this script, and write a shell script that runs this script and then commits/pushes to GitHub, and then schedule that script to run at regular intervals from your computer/server. I'm going to look into adding that functionality to this script, but it's not ready yet.
 
 Enjoy!
+
+## pypothesis.py
+
+The beginnings of a Python module that will allow programmers a simpler interface for the hypothes.is API.
