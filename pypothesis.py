@@ -48,6 +48,15 @@ def retrieve(apiurl):
     d = json.loads(h.text)
     return d
 
+def retrievelist(searchurl):
+    # takes a hypothes.is API search URL returns JSON data for each element as a list of individual annotations
+    h = requests.get(searchurl)
+    d = json.loads(h.text)
+    jsonlist = []
+    for entry in d['rows']:
+        jsonlist.append(entry)
+    return jsonlist
+
 def apiurl(hypurl):
     # takes the hyp.is URL provided in an annotation and returns the API URL (for use elsewhere in this module)
     hypid = hypurl.split('.is/')[1].split('/')[0]
@@ -92,12 +101,18 @@ def searchurl(user = '', tag = '', tags = []):
 # test
 
 """
-s = searchurl('kris.shaffer@hypothes.is', tags = ['#IndieEdTech', 'writing'])
-print(s)
+# search for all annotations with the tag IndieEdTech and return them in json format.
+s = searchurl(tag = 'IndieEdTech')
+l = retrievelist(s)
+
+# print the title of each article annotated.
+for entry in l:
+    e = Annotation(entry)
+    print(e.title)
 """
 
 """
-# using the hyothes.is annotation share URL, retrieve and parse the JSON data
+# Using the hyothes.is annotation share URL, retrieve and parse the JSON data for that annotation, then print it.
 t = Annotation(retrieve(apiurl('https://hyp.is/AVOP5R06H9ZO4OKSlTrY/hackeducation.com/2016/03/18/i-love-my-label')))
 print(t.title)
 print(t.uri)
