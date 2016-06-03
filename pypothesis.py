@@ -54,7 +54,47 @@ def apiurl(hypurl):
     url = 'https://hypothes.is/api/annotations/' + hypid
     return url
 
+def searchurl(user = '', tag = '', tags = []):
+    """
+    Returns a well-formed URL for querying the hypothes.is API.
+    A hypothes.is username is optional.
+    Use *either* tag or tags, not both. You can also use neither if a username is provided.
+    Use tag for a single tag, and put the tag in quotes.
+    Use tags for multiple tags, and enclose them in a list: ['tag1', 'tag2', 'tag3'].
+    searchurl() only works if at least once term (user, tag, or tags) is provided.
+    """
+
+    source = 'https://hypothes.is/api/search?'
+    conn = '&'
+    usercall = 'user='
+    tagcall = 'tags='
+    if tags == []:
+        if user != '' and tag != '':
+            return source + usercall + user + conn + tagcall + tag
+        if user == '' and tag != '':
+            return source + tagcall + tag
+        if user != '' and tag == '':
+            return source + usercall + user
+        if user == '' and tag == '':
+            print('No search parameters included.')
+    if tags != []:
+        if user != '':
+            sourcestring = source + usercall + user
+            for entry in tags:
+                sourcestring += (conn + tagcall + entry)
+            return sourcestring
+        if user == '':
+            sourcestring = source + tagcall + tags.pop(0)
+            while tags != []:
+                sourcestring += (conn + tagcall + tags.pop(0))
+            return sourcestring
+
 # test
+
+"""
+s = searchurl('kris.shaffer@hypothes.is', tags = ['#IndieEdTech', 'writing'])
+print(s)
+"""
 
 """
 # using the hyothes.is annotation share URL, retrieve and parse the JSON data
