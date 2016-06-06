@@ -1,5 +1,6 @@
 import requests
 import json
+import ast
 
 source = 'https://hypothes.is/api/search?'
 conn = '&'
@@ -72,7 +73,9 @@ def markdown(annotation):
 
 # run
 h = requests.get(searchstring)
-d = json.loads(h.text)
+#retained in case needed for valid unicode in JSON
+#d = json.loads(h.text)
+d = ast.literal_eval(h.text)
 
 dataToWrite = []
 i = 0
