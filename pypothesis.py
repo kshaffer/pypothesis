@@ -112,8 +112,8 @@ for entry in l:
 """
 
 """
-# Using the hyothes.is annotation share URL, retrieve and parse the JSON data for that annotation, then print it.
-t = Annotation(retrieve(apiurl('https://hyp.is/AVOP5R06H9ZO4OKSlTrY/hackeducation.com/2016/03/18/i-love-my-label')))
+# Using the hypothes.is annotation share URL, retrieve and parse the JSON data for that annotation, then print it.
+t = Annotation(retrieve(apiurl('https://hyp.is/s43Svk2xEeaKmptcVb4Svg/kris.shaffermusic.com/2015/03/sustainable-pedagogy/')))
 print(t.title)
 print(t.uri)
 print(t.highlight)
